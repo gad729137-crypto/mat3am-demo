@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مطعم مذاق | Mazaq - أفخم تجربة مشويات وبرجر جورميه</title>
+  <meta name="description" content="مطعم مذاق يقدم أشهى المشويات الفاخرة على الفحم والبرجر الجورميه المبتكر بأجود أنواع اللحوم الطازجة. فروعنا في التجمع الخامس والشيخ زايد.">
+  <meta name="keywords" content="مطعم مذاق, مشويات, برجر, وجبات سريعة, شواء على الفحم, مطاعم القاهرة, التجمع الخامس, الشيخ زايد">
+  <meta property="og:title" content="مطعم مذاق | طعم الفخامة في كل قضمة">
+  <meta property="og:description" content="أفخم مشويات وبرجر جورميه في مصر بلحوم طازجة 100%. اطلب الآن أو احجز طاولتك.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+
+  <!-- Google Fonts: Cairo & Tajawal -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-inner">
+      <div class="announcement-text">
+        <span class="badge-fire"><i class="fa-solid fa-fire"></i> عرض خاص</span>
+        <span>خصم 20% على طلبات التوصيل الأولى باستخدام كود: <strong>MAZAQ20</strong></span>
+      </div>
+      <div class="announcement-contact">
+        <a href="tel:01098765432"><i class="fa-solid fa-phone"></i> الخط الساخن: 01098765432</a>
+        <span class="divider">|</span>
+        <span><i class="fa-regular fa-clock"></i> يومياً 12:00 م - 02:00 ص</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="navbar">
+    <div class="container nav-container">
+      <!-- Logo -->
+      <a href="#home" class="brand-logo">
+        <div class="logo-emblem">
+          <i class="fa-solid fa-fire-burner"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">مَــذَاق</span>
+          <span class="logo-sub">GRILLS & BURGERS</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="#home" class="nav-link active">الرئيسية</a></li>
+          <li><a href="#about" class="nav-link">عن مذاق</a></li>
+          <li><a href="#menu" class="nav-link">قائمة الطعام</a></li>
+          <li><a href="#offers" class="nav-link">العروض الخاصة</a></li>
+          <li><a href="#reviews" class="nav-link">آراء العملاء</a></li>
+          <li><a href="#branches" class="nav-link">الفروع وساعات العمل</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Cart Button -->
+        <button class="cart-trigger-btn" id="cartOpenBtn" aria-label="سلة الطلبات">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="cartBadgeCount">0</span>
+        </button>
+
+        <!-- Book Table CTA -->
+        <a href="#reservation" class="btn btn-primary btn-glow">
+          <i class="fa-regular fa-calendar-check"></i>
+          <span>احجز طاولة</span>
+        </a>
+
+        <!-- Mobile Menu Hamburger -->
+        <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="القائمة">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <div class="logo-emblem"><i class="fa-solid fa-fire-burner"></i></div>
+        <div class="logo-text">
+          <span class="logo-title">مَــذَاق</span>
+          <span class="logo-sub">GRILLS & BURGERS</span>
+        </div>
+      </div>
+      <button class="drawer-close-btn" id="drawerCloseBtn">&times;</button>
+    </div>
+    <div class="drawer-body">
+      <ul class="drawer-links">
+        <li><a href="#home" class="drawer-link"><i class="fa-solid fa-house"></i> الرئيسية</a></li>
+        <li><a href="#about" class="drawer-link"><i class="fa-solid fa-utensils"></i> عن مذاق</a></li>
+        <li><a href="#menu" class="drawer-link"><i class="fa-solid fa-book-open"></i> قائمة الطعام</a></li>
+        <li><a href="#offers" class="drawer-link"><i class="fa-solid fa-tags"></i> العروض والبوكسات</a></li>
+        <li><a href="#reviews" class="drawer-link"><i class="fa-solid fa-star"></i> تجارب الزوار</a></li>
+        <li><a href="#branches" class="drawer-link"><i class="fa-solid fa-location-dot"></i> الفروع والتواصل</a></li>
+      </ul>
+      <div class="drawer-cta">
+        <a href="#reservation" class="btn btn-primary btn-block drawer-action-btn">
+          <i class="fa-solid fa-calendar-check"></i> احجز طاولة الآن
+        </a>
+        <a href="https://wa.me/201098765432" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-block">
+          <i class="fa-brands fa-whatsapp"></i> تواصل عبر الواتساب
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="hero-bg-overlay"></div>
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span class="pulse-dot"></span>
+          <span>🔥 تجربة الشواء الفاخرة رقم #1 في القاهرة</span>
+        </div>
+        <h1 class="hero-title">
+          طعم الفخامة الأصيل <br>
+          <span class="highlight-text">بين لهب الشواء ونكهة البرجر</span>
+        </h1>
+        <p class="hero-desc">
+          في مطعم «مذاق»، نجمع بين أصالة المشويات البلدي المدخنة على الفحم الطبيعي، وابتكار البرجر الجورميه بخبز البريوش والصلصات السرية. طازج 100% يومياً لأجلك ولعائلتك.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-utensils"></i>
+            <span>تصفح المنيو والأسعار</span>
+          </a>
+          <a href="#reservation" class="btn btn-outline btn-lg">
+            <i class="fa-regular fa-clock"></i>
+            <span>احجز طاولتك مجاناً</span>
+          </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-num">+15K</span>
+            <span class="stat-label">وجبة قُدمت بحب</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">4.9 <i class="fa-solid fa-star text-gold"></i></span>
+            <span class="stat-label">تقييم أكثر من 2,500 زائر</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-label">لحوم بلدي طازجة يومياً</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Showcase -->
+      <div class="hero-visual">
+        <div class="visual-card-wrapper">
+          <div class="visual-card main-card">
+            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=900&auto=format&fit=crop" alt="برجر مذاق سيجنتشر" class="hero-img">
+            <div class="card-floating-badge badge-top-right">
+              <i class="fa-solid fa-award"></i>
+              <div>
+                <strong>الأكثر مبيعاً</strong>
+                <small>برجر مذاق سيجنتشر</small>
+              </div>
+            </div>
+            <div class="card-floating-badge badge-bottom-left">
+              <i class="fa-solid fa-fire text-orange"></i>
+              <div>
+                <strong>شواء فحم فوري</strong>
+                <small>نكهة تدخين طبيعية</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features / Why Choose Us -->
+  <section class="section-features">
+    <div class="container">
+      <div class="features-grid">
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-cow"></i></div>
+          <div class="feature-info">
+            <h3>لحوم بلدي طازجة 100%</h3>
+            <p>نختار أجود قطعيات اللحم البلدي والأنجوس يومياً دون أي مجمدات أو إضافات صناعية.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+          <div class="feature-info">
+            <h3>شواء على فحم طبيعي</h3>
+            <p>تتبيلات سرية معتقة بأعشاب طبيعية لضمان النكهة المدخنة التي تأسر الحواس.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-couch"></i></div>
+          <div class="feature-info">
+            <h3>أجواء عائلية وشبابية راقية</h3>
+            <p>صالات مكيفة ومجهزة بديكورات عصرية دافئة وموسيقى هادئة تناسب كل التجمعات.</p>
+          </div>
+        </div>
+        <div class="feature-box">
+          <div class="feature-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <div class="feature-info">
+            <h3>توصيل فائق السرعة وساخن</h3>
+            <p>تغليف حراري احترافي يحافظ على القرمشة والحرارة وكأنك تأكل داخل صالة المطعم.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section-about" id="about">
+    <div class="container about-container">
+      <div class="about-images">
+        <div class="about-img-main">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=900&auto=format&fit=crop" alt="شواء لحوم مذاق">
+        </div>
+        <div class="about-img-sub">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop" alt="أجواء مطعم مذاق">
+          <div class="experience-badge">
+            <span class="exp-years">10+</span>
+            <span class="exp-text">سنوات من الشغف والتميز</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <div class="section-pill"><i class="fa-solid fa-crown"></i> قصة مطعم مذاق</div>
+        <h2 class="section-title">حيث يلتقي فن الشواء التقليدي <br> بلمسات الطهي العالمية</h2>
+        <p class="about-p">
+          بدأنا في «مذاق» برؤية واضحة: إعادة تعريف تجربة المشويات والبرجر في مصر. لم نكن نريد مجرد تقديم وجبة عادية، بل أردنا خلق تجربة استثنائية تبدأ من رائحة خشب الجوز والفحم لحظة دخولك، وحتى آخر قضمة غنية بالنكهات المتوازنة.
+        </p>
+        <p class="about-p">
+          يقود مطبخنا نخبة من أمهر الطهاة المتخصصين في الشواء وفنون تحضير البرجر الجورميه، ونفخر بأن كل صوص، تتبيلة، وقطعة خبز بريوش تُصنع خصيصاً داخل مطبخنا يومياً لضمان أعلى معايير الجودة.
+        </p>
+
+        <div class="about-bullets">
+          <div class="bullet-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>مكونات طبيعية وأعشاب طازجة 100%</span>
+          </div>
+          <div class="bullet-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>مساحات مخصصة للعائلات وتجهيزات للمناسبات</span>
+          </div>
+          <div class="bullet-item">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>خدمة استثنائية وضيافة مصرية كريمة</span>
+          </div>
+        </div>
+
+        <div class="about-action">
+          <a href="#reservation" class="btn btn-primary">احجز طاولتك وجرّب بنفسك</a>
+          <div class="chef-signature">
+            <span class="chef-name">الشيف مصطفى سالم</span>
+            <span class="chef-title">رئيس الطهاة والشريك المؤسس</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Menu Section -->
+  <section class="section-menu" id="menu">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-pill"><i class="fa-solid fa-utensils"></i> قائمة طعام مذاق</div>
+        <h2 class="section-title">اختر وجبتك المفضلة اليوم</h2>
+        <p class="section-subtitle">تشكيلة مختارة بعناية من أشهى المشويات، البرجر الجورميه، والساندوتشات المعدة بأعلى معايير الشيف</p>
+      </div>
+
+      <!-- Menu Controls (Search & Filter) -->
+      <div class="menu-controls">
+        <!-- Search Bar -->
+        <div class="menu-search-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="menuSearchInput" placeholder="ابحث عن وجبتك (مثال: برجر، ريش، شيش، ترافل...)" autocomplete="off">
+          <button id="clearSearchBtn" class="clear-search hidden">&times;</button>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="category-tabs" id="categoryTabs">
+          <button class="cat-btn active" data-category="all">
+            <i class="fa-solid fa-border-all"></i> الكل
+          </button>
+          <button class="cat-btn" data-category="grills">
+            <i class="fa-solid fa-fire-burner"></i> مشويات فاخرة
+          </button>
+          <button class="cat-btn" data-category="burgers">
+            <i class="fa-solid fa-burger"></i> برجر جورميه
+          </button>
+          <button class="cat-btn" data-category="sandwiches">
+            <i class="fa-solid fa-hotdog"></i> ساندوتشات ووجبات
+          </button>
+          <button class="cat-btn" data-category="appetizers">
+            <i class="fa-solid fa-bowl-food"></i> مقبلات وشوربة
+          </button>
+          <button class="cat-btn" data-category="desserts">
+            <i class="fa-solid fa-ice-cream"></i> حلويات ومشروبات
+          </button>
+        </div>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-grid" id="menuGrid">
+        <!-- Populated dynamically via app.js -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="menu-empty-state hidden" id="menuEmptyState">
+        <i class="fa-solid fa-utensils-slash"></i>
+        <h3>لم نعثر على وجبات مطابقة لبحثك</h3>
+        <p>جرّب البحث باسم وجبة أخرى أو استعرض الأقسام من الأعلى</p>
+        <button class="btn btn-outline" id="resetFilterBtn">إعادة ضبط القائمة</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Special Offers & Family Boxes -->
+  <section class="section-offers" id="offers">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-pill"><i class="fa-solid fa-tag"></i> التوفير واللمة</div>
+        <h2 class="section-title">عروض وبوكسات التوفير للصحبة والعائلة</h2>
+        <p class="section-subtitle">وجبات متكاملة مشبعة بأفضل الأسعار تناسب سهرات الأصدقاء وتجمعات العائلة</p>
+      </div>
+
+      <div class="offers-grid">
+        <!-- Offer 1 -->
+        <div class="offer-card featured-offer">
+          <div class="offer-ribbon">الأكثر توفيراً</div>
+          <div class="offer-badge-discount">وفر 180 ج.م</div>
+          <div class="offer-img-wrap">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="بوكس اللمة الملكي">
+          </div>
+          <div class="offer-content">
+            <h3 class="offer-title">بوكس اللمة الملكي (تكفي 4-5 أفراد)</h3>
+            <p class="offer-desc">نصف كيلو كباب بلدي + نصف كيلو كفتة حاتي + شيش طاووق + أرز بسمتي بالمكسرات + 4 صوصات وبطاطس عائلية ولتر كولا.</p>
+            <div class="offer-pricing">
+              <span class="old-price">970 ج.م</span>
+              <span class="current-price">790 ج.م</span>
+            </div>
+            <button class="btn btn-primary btn-block add-offer-btn" data-offer-id="offer-1">
+              <i class="fa-solid fa-cart-plus"></i> أضف العرض للطلب
+            </button>
+          </div>
+        </div>
+
+        <!-- Offer 2 -->
+        <div class="offer-card">
+          <div class="offer-badge-discount">وفر 110 ج.م</div>
+          <div class="offer-img-wrap">
+            <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?q=80&w=800&auto=format&fit=crop" alt="كومبو ديو برجر">
+          </div>
+          <div class="offer-content">
+            <h3 class="offer-title">كومبو برجر ديو لشخصين</h3>
+            <p class="offer-desc">2 برجر أنجوس جورميه من اختيارك + بطاطس لودد فرايز مكس شيدر وهالبينو + أصابع موتزاريلا + 2 مشروب غازي.</p>
+            <div class="offer-pricing">
+              <span class="old-price">540 ج.م</span>
+              <span class="current-price">430 ج.م</span>
+            </div>
+            <button class="btn btn-primary btn-block add-offer-btn" data-offer-id="offer-2">
+              <i class="fa-solid fa-cart-plus"></i> أضف العرض للطلب
+            </button>
+          </div>
+        </div>
+
+        <!-- Offer 3 -->
+        <div class="offer-card">
+          <div class="offer-badge-discount">وفر 90 ج.م</div>
+          <div class="offer-img-wrap">
+            <img src="https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=800&auto=format&fit=crop" alt="وجبة التوفير السريعة">
+          </div>
+          <div class="offer-content">
+            <h3 class="offer-title">بوكس التوفير المقرمش</h3>
+            <p class="offer-desc">10 قطع ستربس دجاج مقرمش ذهبي + ساندوتش برجر كرانشي + 2 بطاطس مقلية متبلة + صوص باربيكيو وثومية وكولا.</p>
+            <div class="offer-pricing">
+              <span class="old-price">410 ج.م</span>
+              <span class="current-price">320 ج.م</span>
+            </div>
+            <button class="btn btn-primary btn-block add-offer-btn" data-offer-id="offer-3">
+              <i class="fa-solid fa-cart-plus"></i> أضف العرض للطلب
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservation Section -->
+  <section class="section-reservation" id="reservation">
+    <div class="container">
+      <div class="reservation-card-wrapper">
+        <div class="reservation-info">
+          <div class="section-pill"><i class="fa-solid fa-calendar-days"></i> حجز مسبق</div>
+          <h2 class="res-title">احجز طاولتك الآن <br> وضمن أفضل تجربة</h2>
+          <p class="res-desc">
+            لتفادي الانتظار في أوقات الذروة، يسرنا استقبال حجزكم مسبقاً لعائلتك أو لمناسبتك الخاصة في قاعاتنا الفاخرة أو الجلسات الخارجية المميزة.
+          </p>
+
+          <div class="res-features-list">
+            <div class="res-feat">
+              <i class="fa-solid fa-champagne-glasses"></i>
+              <div>
+                <h4>تجهيز خاص للمناسبات وأعياد الميلاد</h4>
+                <p>يمكننا تزيين الطاولة وتوفير تورتة الشوكولاتة الخاصة بمذاق عند الطلب.</p>
+              </div>
+            </div>
+            <div class="res-feat">
+              <i class="fa-solid fa-children"></i>
+              <div>
+                <h4>أجواء عائلية مريحة ومنطقة ألعاب أطفال</h4>
+                <p>نوفر كراسي مخصصة للأطفال ومساحات آمنة لراحتكم.</p>
+              </div>
+            </div>
+            <div class="res-feat">
+              <i class="fa-solid fa-phone-volume"></i>
+              <div>
+                <h4>تأكيد فوري عبر رسائل الواتساب</h4>
+                <p>سيتواصل معك فريق الاستقبال لتأكيد الحجز خلال دقائق معدودة.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reservation-form-container">
+          <form id="reservationForm" class="res-form">
+            <h3 class="form-heading"><i class="fa-regular fa-calendar-check"></i> نموذج حجز طاولة</h3>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label for="resName">الاسم بالكامل *</label>
+                <div class="input-with-icon">
+                  <i class="fa-regular fa-user"></i>
+                  <input type="text" id="resName" required placeholder="مثال: أحمد محمود">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="resPhone">رقم الهاتف أو الواتساب *</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-mobile-screen"></i>
+                  <input type="tel" id="resPhone" required placeholder="01012345678">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="resBranch">الفرع المطلوب *</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-store"></i>
+                  <select id="resBranch" required>
+                    <option value="فرع التجمع الخامس - التسعين الشمالي">فرع التجمع الخامس (شارع التسعين الشمالي)</option>
+                    <option value="فرع الشيخ زايد - كابيتال مول">فرع الشيخ زايد (كابيتال مول - وصلة دهشور)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="resGuests">عدد الأفراد *</label>
+                <div class="input-with-icon">
+                  <i class="fa-solid fa-users"></i>
+                  <select id="resGuests" required>
+                    <option value="فردين (2)">شخصين</option>
+                    <option value="3 إلى 4 أفراد" selected>3 - 4 أفراد</option>
+                    <option value="5 إلى 8 أفراد">5 - 8 أفراد (عائلي)</option>
+                    <option value="أكثر من 8 أفراد">أكثر من 8 أفراد (مجموعة كبيرة)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="resDate">تاريخ الحجز *</label>
+                <div class="input-with-icon">
+                  <i class="fa-regular fa-calendar"></i>
+                  <input type="date" id="resDate" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="resTime">وقت الحضور *</label>
+                <div class="input-with-icon">
+                  <i class="fa-regular fa-clock"></i>
+                  <select id="resTime" required>
+                    <option value="02:00 م">02:00 ظهراً (غداء)</option>
+                    <option value="04:00 م">04:00 عصراً</option>
+                    <option value="06:00 م">06:00 مساءً</option>
+                    <option value="08:00 م" selected>08:00 مساءً (عشاء مبكر)</option>
+                    <option value="10:00 م">10:00 مساءً (عشاء)</option>
+                    <option value="12:00 ص">12:00 منتصف الليل</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="resNotes">ملاحظات أو طلبات خاصة (اختياري)</label>
+              <textarea id="resNotes" rows="2" placeholder="جلسة خارجية، احتفال بعيد ميلاد، كرسي أطفال..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-lg">
+              <i class="fa-solid fa-check"></i> تأكيد إرسال الحجز
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews / Testimonials -->
+  <section class="section-reviews" id="reviews">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-pill"><i class="fa-solid fa-star"></i> تجارب وشهادات</div>
+        <h2 class="section-title">ماذا يقول زوار مطعم مذاق؟</h2>
+        <p class="section-subtitle">فخورون برضا آلاف الضيوف الذين شاركونا لحظاتهم اللذيذة</p>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            «أفضل كباب وكفتة أكلتهم في التجمع بلا مبالغة! اللحمة بلدي طازجة جداً وطرية، والريش المشوية لها نكهة تدخين فحم تجنن. الخدمة راقية وسريعة والمكان شيك جداً.»
+          </p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">ك.م</div>
+            <div>
+              <h4 class="reviewer-name">كريم ممدوح</h4>
+              <span class="reviewer-role">مرشد محلي - جوجل ماب</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card highlight-review">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            «برجر مذاق سيجنتشر والترافل برجر ينافس أكبر براندات البرجر العالمية! الخبز بريوش هش واللحم جوسي لأقصى درجة. تجربة ممتازة وسأكررها مع أصحابي أكيد.»
+          </p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">س.ع</div>
+            <div>
+              <h4 class="reviewer-name">سارة عبد العزيز</h4>
+              <span class="reviewer-role">صانعة محتوى طعام (Food Blogger)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            «طلبنا عرض بوكس اللمة الملكي في عزومة عائلية بالبيت، الأكل وصل ساخن جداً في تغليف محكم والكمية كانت وفيرة جداً ومشبعة مع صوصات تحفة. شكراً مذاق على الاحترام.»
+          </p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">م.ط</div>
+            <div>
+              <h4 class="reviewer-name">م. طارق الشناوي</h4>
+              <span class="reviewer-role">فرع الشيخ زايد</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Branches & Contact Section -->
+  <section class="section-branches" id="branches">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-pill"><i class="fa-solid fa-map-location-dot"></i> العناوين والتواصل</div>
+        <h2 class="section-title">فروعنا وساعات استقبالكم</h2>
+        <p class="section-subtitle">شرفونا بزيارتكم في أقرب فرع، أو اطلب ليصلك كل ما تشتهيه أينما كنت</p>
+      </div>
+
+      <div class="branches-grid">
+        <!-- Branch 1: New Cairo -->
+        <div class="branch-card">
+          <div class="branch-header">
+            <span class="branch-tag">الفرع الرئيسي</span>
+            <h3>فرع التجمع الخامس</h3>
+          </div>
+          <div class="branch-body">
+            <div class="branch-detail">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>شارع التسعين الشمالي، مول سيلفر ستار، بجوار ميدان بتروسبورت، القاهرة الجديدة.</span>
+            </div>
+            <div class="branch-detail">
+              <i class="fa-regular fa-clock"></i>
+              <span>يومياً من 12:00 ظهراً حتى 02:00 بعد منتصف الليل.</span>
+            </div>
+            <div class="branch-detail">
+              <i class="fa-solid fa-phone"></i>
+              <span>01098765432 / 0228123456</span>
+            </div>
+            <div class="branch-actions">
+              <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                <i class="fa-solid fa-diamond-turn-right"></i> فتح الموقع في خرائط جوجل
+              </a>
+              <a href="tel:01098765432" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-phone"></i> اتصال بالفرع
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Branch 2: Sheikh Zayed -->
+        <div class="branch-card">
+          <div class="branch-header">
+            <span class="branch-tag">فرع زايد وأكتوبر</span>
+            <h3>فرع الشيخ زايد</h3>
+          </div>
+          <div class="branch-body">
+            <div class="branch-detail">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>كابيتال مول، وصلة دهشور، أمام بوابة زايد 4، مدينة الشيخ زايد، الجيزة.</span>
+            </div>
+            <div class="branch-detail">
+              <i class="fa-regular fa-clock"></i>
+              <span>يومياً من 12:30 ظهراً حتى 02:30 بعد منتصف الليل.</span>
+            </div>
+            <div class="branch-detail">
+              <i class="fa-solid fa-phone"></i>
+              <span>01098765433 / 0238987654</span>
+            </div>
+            <div class="branch-actions">
+              <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                <i class="fa-solid fa-diamond-turn-right"></i> فتح الموقع في خرائط جوجل
+              </a>
+              <a href="tel:01098765433" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-phone"></i> اتصال بالفرع
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Delivery CTA Banner -->
+      <div class="delivery-banner">
+        <div class="delivery-content">
+          <i class="fa-solid fa-motorcycle delivery-icon"></i>
+          <div>
+            <h3>هل تفضل تناول وجبتك في منزلك أو مكتبك؟</h3>
+            <p>نوفر خدمة التوصيل السريع لجميع مناطق القاهرة الكبرى والجيزة مع الحفاظ التام على حرارة وجودة الطعام.</p>
+          </div>
+        </div>
+        <div class="delivery-actions">
+          <a href="https://wa.me/201098765432?text=مرحباً%20مطعم%20مذاق،%20أريد%20طلب%20دليفري" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
+            <i class="fa-brands fa-whatsapp"></i> اطلب عبر واتساب الآن
+          </a>
+          <a href="tel:01098765432" class="btn btn-outline btn-lg">
+            <i class="fa-solid fa-phone"></i> الخط الساخن 01098765432
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="footer-col brand-col">
+        <div class="brand-logo">
+          <div class="logo-emblem"><i class="fa-solid fa-fire-burner"></i></div>
+          <div class="logo-text">
+            <span class="logo-title">مَــذَاق</span>
+            <span class="logo-sub">GRILLS & BURGERS</span>
+          </div>
+        </div>
+        <p class="footer-desc">
+          مطعم مذاق - وجهتكم المفضلة لأشهى المشويات الشرقية على الفحم والبرجر الجورميه المبتكر بلحوم بلدي 100%. نتشرف بخدمتكم في فروعنا وعبر التوصيل السريع.
+        </p>
+        <div class="social-links">
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="إنستغرام"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="تيك توك"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://wa.me/201098765432" target="_blank" rel="noopener noreferrer" aria-label="واتساب"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#about">عن مذاق وقصتنا</a></li>
+          <li><a href="#menu">منيو الطعام والأسعار</a></li>
+          <li><a href="#offers">عروض وبوكسات التوفير</a></li>
+          <li><a href="#reservation">حجز طاولة مسبقاً</a></li>
+          <li><a href="#branches">عناوين الفروع</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>أقسام المنيو</h4>
+        <ul class="footer-links">
+          <li><a href="#menu" onclick="filterCategoryDirect('grills')">مشويات بلدي على الفحم</a></li>
+          <li><a href="#menu" onclick="filterCategoryDirect('burgers')">برجر أنجوس جورميه</a></li>
+          <li><a href="#menu" onclick="filterCategoryDirect('sandwiches')">ساندوتشات وستربس مقرمش</a></li>
+          <li><a href="#menu" onclick="filterCategoryDirect('appetizers')">مقبلات ولودد فرايز</a></li>
+          <li><a href="#menu" onclick="filterCategoryDirect('desserts')">حلويات ومشروبات فريش</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>طرق الدفع المتاحة</h4>
+        <p class="payment-text">نقبل الدفع النقدي والإلكتروني في صالاتنا ومع مندوب التوصيل:</p>
+        <div class="payment-badges">
+          <span class="pay-badge"><i class="fa-solid fa-money-bill-wave"></i> كاش</span>
+          <span class="pay-badge"><i class="fa-brands fa-cc-visa"></i> فيزا</span>
+          <span class="pay-badge"><i class="fa-brands fa-cc-mastercard"></i> ماستركارد</span>
+          <span class="pay-badge"><i class="fa-solid fa-wallet"></i> ميزة ومحافظ إلكترونية</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 جميع الحقوق محفوظة لمطعم <strong>مذاق (Mazaq Grills & Burgers)</strong>.</p>
+        <p class="agency-credit">تصميم وبرمجة نموذج تجريبي احترافي لعرض خدمات الويب للعملاء.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-out Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title">
+        <i class="fa-solid fa-bag-shopping text-gold"></i>
+        <span>سلة طلبك (<span id="cartTotalItemsCount">0</span>)</span>
+      </div>
+      <button class="cart-close-btn" id="cartCloseBtn">&times;</button>
+    </div>
+
+    <div class="cart-drawer-body" id="cartDrawerBody">
+      <!-- Populated dynamically or shows empty state -->
+    </div>
+
+    <div class="cart-drawer-footer" id="cartDrawerFooter">
+      <div class="cart-summary">
+        <div class="summary-line">
+          <span>المجموع الفرعي:</span>
+          <span id="cartSubtotal">0 ج.م</span>
+        </div>
+        <div class="summary-line">
+          <span>رسوم التوصيل المقدرة:</span>
+          <span id="cartDeliveryFee">35 ج.م</span>
+        </div>
+        <div class="summary-line total-line">
+          <span>الإجمالي النهائي:</span>
+          <span id="cartGrandTotal">35 ج.م</span>
+        </div>
+      </div>
+
+      <div class="cart-checkout-actions">
+        <button class="btn btn-whatsapp btn-block" id="whatsappCheckoutBtn">
+          <i class="fa-brands fa-whatsapp"></i> تأكيد الطلب عبر واتساب مباشرة
+        </button>
+        <button class="btn btn-outline btn-block btn-sm" id="clearCartBtn">
+          <i class="fa-regular fa-trash-can"></i> تفريغ السلة
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Table Reservation Confirmation Modal -->
+  <div class="modal-overlay" id="reservationModal">
+    <div class="modal-card">
+      <div class="modal-icon-success">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h3 class="modal-title">تم استلام طلب حجز الطاولة بنجاح!</h3>
+      <p class="modal-desc" id="modalConfirmationDesc">
+        شكراً لك، سيتواصل معك ممثل خدمة العملاء في مطعم «مذاق» لتأكيد موعدكم خلال لحظات.
+      </p>
+      
+      <div class="reservation-ticket" id="reservationTicket">
+        <!-- Injected dynamically -->
+      </div>
+
+      <div class="modal-actions">
+        <a href="#" id="modalWhatsappConfirm" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-block">
+          <i class="fa-brands fa-whatsapp"></i> فتح المحادثة على واتساب الفرع
+        </a>
+        <button class="btn btn-outline btn-block" id="closeModalBtn">
+          إغلاق النافذة
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn hidden" id="backToTopBtn" aria-label="الرجوع للأعلى">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Mobile Floating Quick Action Bar -->
+  <div class="mobile-quick-bar">
+    <a href="#menu" class="quick-item">
+      <i class="fa-solid fa-utensils"></i>
+      <span>المنيو</span>
+    </a>
+    <a href="#reservation" class="quick-item">
+      <i class="fa-regular fa-calendar-check"></i>
+      <span>الحجز</span>
+    </a>
+    <a href="tel:01098765432" class="quick-item">
+      <i class="fa-solid fa-phone"></i>
+      <span>اتصال</span>
+    </a>
+    <button class="quick-item quick-cart" id="mobileBarCartBtn">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span class="quick-cart-badge" id="mobileBarCartBadge">0</span>
+      <span>السلة</span>
+    </button>
+  </div>
+
+  <!-- JavaScript Application Logic -->
+  <script src="js/app.js"></script>
+</body>
+</html>
